@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About - AuraTrack</title>
+        <link rel="stylesheet" href="notifications.css">
+        <script defer src="notifications.js"></script>
+        <link rel="stylesheet" href="../unreadnum.css">
+        <script defer src="../unreadnum.js"></script>
+    
+    
+    </head>
+    <body>
+        <div class="container">
+            <!-- Sidebar -->
+            <aside class="sidebar" id="sidebar">
+                <ul>
+                    <li><a href="../interface/interface.html"><span>🏠</span> Home</a></li>
+                    <li><a href="#"><span>📊</span> Status</a></li>
+                    <li><a href="#"><span>⚙️</span> Settings</a></li>
+                    <li><a href="notifications.html"><span>🔔</span> Notifications <span id="unread-count"></span> <!-- Unread count badge --></a></li>
+                    <li><a href="about.html" class="active"><span>ℹ️</span> About</a></li>
+                </ul>
+        </aside>
+
+        <!-- Header -->
+        <header>
+            <div class="burger-menu" id="menu-btn">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <h1>AuraTrack - Notifications</h1>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="main-content" id="main-content">
+                <section class="notifications-card">
+                    <h2>Notifications</h2>
+                    <div class="search-filter">
+                        <input type="text" id="search-bar" placeholder="Search Notifications...">
+                        <select id="category-filter" onchange="filterNotifications()">
+                            <option value="">All</option>
+                            <option value="status">Status</option>
+                            <option value="error">Error</option>
+                            <option value="reminder">Reminder</option>
+                        </select>
+                    </div>
+                    <button class="clear-all-btn" onclick="clearAllNotifications()">Clear All Notifications</button>
+                    <div id="notifications">
+                        <!-- Notifications will be dynamically loaded here -->
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>Optimizing Energy | Reducing Impact | AuraTrack © 2024</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - AuraTrack</title>
+    <link rel="stylesheet" href="about.css">
+    <script defer src="about.js"></script>
+    <link rel="stylesheet" href="../unreadnum.css">
+    <script defer src="../unreadnum.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <ul>
+                <li><a href="../interface/interface.html"><span>🏠</span> Home</a></li>
+                <li><a href="#"><span>📊</span> Status</a></li>
+                <li><a href="#"><span>⚙️</span> Settings</a></li>
+                <li><a href="notifications.html"><span>🔔</span> Notifications <span id="unread-count"></span></a></li>
+                <li><a href="about.html" class="active"><span>ℹ️</span> About</a></li>
+            </ul>
+        </aside>
+
+        <!-- Header -->
+        <header>
+            <div class="burger-menu" id="menu-btn">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <h1>AuraTrack - About</h1>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="main-content" id="main-content">
+                <section class="about-card">
+                    <h2>About AuraTrack</h2>
+                    <p>AuraTrack is an innovative system designed to optimize energy usage by controlling smart devices such as light bulbs, based on motion detection.</p>
+                    <div class="features">
+                        <h3>System Overview</h3>
+                        <p>This system integrates an Arduino microcontroller with a motion sensor and a smart light bulb. The motion sensor detects presence in the area, and the Arduino processes this data to control the light bulb accordingly.</p>
+                        <h3>Hardware Components</h3>
+                        <p>The components include an Arduino board, a motion sensor, and a smart light bulb.</p>
+                        <h3>Features</h3>
+                        <ul>
+                            <li>Automated light control based on motion detection</li>
+                            <li>Energy usage optimization</li>
+                            <li>Real-time status updates and notifications</li>
+                        </ul>
+                        <h3>Goals</h3>
+                        <p>AuraTrack aims to create a sustainable environment by efficiently managing energy consumption in homes and offices, ensuring that devices are only powered when needed.</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>Optimizing Energy | Reducing Impact | AuraTrack © 2024</p>
+        </footer>
+    </div>
+</body>
+</html>

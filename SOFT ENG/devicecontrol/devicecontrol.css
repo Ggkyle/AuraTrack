@@ -1,0 +1,250 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    background-color: #213A58; /* Dark background */
+    color: #D4D8DD; /* Light text */
+}
+
+/* Container */
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Header, Main, Footer */
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #2b6777;
+    color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar.visible {
+    left: 0;
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #52a099;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #213A58;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    height: 70px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 900;
+}
+
+header h1 {
+    font-size: 1.6rem;
+    color: #46DFB1;
+    font-weight: bold;
+    margin-left: 60px; /* Space for burger menu */
+}
+
+/* Burger Menu */
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    top: 25px;
+    z-index: 1001; /* Above sidebar */
+}
+
+.burger-menu .line {
+    height: 4px;
+    width: 100%;
+    background-color: #46DFB1;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.burger-menu.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Main Content */
+main {
+    margin-top: 70px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100vh - 120px);
+    overflow-y: auto;
+}
+
+.main-content {
+    max-width: 900px;
+    width: 100%;
+}
+
+/* Device Management */
+.device-management,
+.devices-list {
+    background-color: #0C6478;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+.device-management form {
+    display: flex;
+    gap: 10px;
+}
+
+.device-management input,
+.device-management select {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    flex: 1;
+}
+
+.device-management button {
+    background-color: #46DFB1;
+    color: #213A58;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.device-management button:hover {
+    background-color: #80EE98;
+}
+
+.devices-list .device-card {
+    background-color: #2b6777;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.device-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.device-info span {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.device-info p {
+    font-size: 1rem;
+}
+
+.device-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.device-controls .toggle-btn,
+.device-controls .remove-btn {
+    background-color: #46DFB1;
+    color: #213A58;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.device-controls .toggle-btn:hover,
+.device-controls .remove-btn:hover {
+    background-color: #80EE98;
+}
+
+.device-controls .remove-btn {
+    background-color: #d9534f;
+}
+
+.device-controls .remove-btn:hover {
+    background-color: #ff6666;
+}
+
+.device-controls .timer-input {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.log-list {
+    margin-top: 10px;
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 0.9rem;
+    color: #D4D8DD;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #213A58;
+    color: #AAB7B7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}

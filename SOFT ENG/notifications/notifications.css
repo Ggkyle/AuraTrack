@@ -1,0 +1,280 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Arial', sans-serif;
+    background-color: #213A58; /* Dark background */
+    color: #D4D8DD; /* Light text */
+    height: 100%;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Header, Main, Footer */
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #2b6777; /* Teal color */
+    color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hidden */
+    width: 250px;
+    height: 100%;
+    transition: left 0.3s ease; /* Smooth slide-in effect */
+    z-index: 1000;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar.visible {
+    left: 0; /* Slide in when visible */
+}
+
+.sidebar ul {
+    list-style: disc; /* Add bullets */
+    padding-left: 20px; /* Indent bullets */
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover, .sidebar ul li a.active {
+    background-color: #1f3c59;
+    border-radius: 5px;
+}
+
+/* Sidebar Badge */
+#unread-count {
+    background-color: #ff6b6b;
+    color: white;
+    font-size: 0.8rem;
+    padding: 3px 7px;
+    border-radius: 10px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    display: none; /* Hidden by default */
+}
+
+/* Burger Menu */
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.burger-menu .line {
+    height: 4px;
+    background-color: #ffffff; /* White lines for visibility */
+    border-radius: 2px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.burger-menu.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #213A58;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between burger menu and text */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Shadow effect for header */
+    z-index: 900; /* Below sidebar */
+}
+
+header h1 {
+    color: #46DFB1;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Main Content */
+main {
+    margin-top: 70px; /* Account for fixed header */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: calc(100vh - 120px); /* Adjust for header and footer height */
+    overflow-y: auto;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 900px;
+    width: 100%;
+}
+
+/* Notifications Section */
+.notifications-card {
+    background-color: #0C6478;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.notifications-card h2 {
+    font-size: 1.4rem;
+    color: #D4D8DD;
+    margin-bottom: 15px;
+}
+
+#notifications {
+    margin-top: 20px;
+}
+
+/* Notification Items */
+.notification {
+    display: flex;
+    flex-direction: column;
+    background-color: #213A58; /* Darker background for notifications */
+    color: #D4D8DD; /* Light text */
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.notification:hover {
+    background-color: #2b6777; /* Teal hover effect */
+}
+
+/* Notification Header */
+.notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.notification-header .timestamp {
+    font-size: 0.9rem;
+    color: #AAB7B7; /* Subtle gray */
+}
+
+/* Notification Categories */
+.status {
+    background-color: #4caf50; /* Green */
+}
+
+.error {
+    background-color: #f44336; /* Red */
+}
+
+.reminder {
+    background-color: #2196f3; /* Blue */
+}
+
+/* Notification Details */
+.notification-details {
+    display: none;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    background-color: #0C6478; /* Slightly lighter teal */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.notification-details.hidden {
+    display: none; /* Hide details */
+}
+
+/* Delete Button */
+.notification .delete-btn {
+    background: none;
+    border: none;
+    color: #ff6b6b; /* Red for delete */
+    cursor: pointer;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.notification .delete-btn:hover {
+    color: #ff4c4c; /* Brighter red on hover */
+}
+
+/* No Notifications Message */
+.no-notifications {
+    text-align: center;
+    color: #AAB7B7;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+/* Clear All Notifications Button */
+.clear-all-btn {
+    background-color: #ff6b6b; /* Red background */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.clear-all-btn:hover {
+    background-color: #ff4c4c; /* Darker red on hover */
+}
+
+/* Search and Filter Section */
+.search-filter {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.search-filter input {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.search-filter select {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}

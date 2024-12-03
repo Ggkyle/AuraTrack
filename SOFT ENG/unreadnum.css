@@ -1,0 +1,21 @@
+/* Sidebar Badge - Unread Notifications */
+#unread-count {
+    background-color: #ff6b6b;   /* Red background for the badge */
+    color: white;
+    font-size: 1rem;  /* Increased font size */
+    padding: 4px 8px; /* Adjust padding for better visibility */
+    border-radius: 50%; /* Make the badge round */
+    position: absolute;
+    top: 5px;   /* Adjust top position */
+    right: 10px;  /* Adjust right position */
+    display: none; /* Hidden by default */
+    line-height: 1;
+    height: 20px;  /* Increased height */
+    width: 20px;   /* Increased width */
+    text-align: center;
+}
+
+/* For when the sidebar is visible and unread count is present */
+.sidebar .visible #unread-count {
+    display: inline-block; /* Show the unread count when the sidebar is visible */
+}

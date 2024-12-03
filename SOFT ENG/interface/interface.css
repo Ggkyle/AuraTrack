@@ -1,0 +1,193 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    background-color: #213A58; /* Dark background */
+    color: #D4D8DD; /* Light text */
+}
+
+/* Main Container */
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Header, Main, Footer */
+    height: 100vh;
+}
+
+.sidebar {
+    background-color: #2b6777; /* Matching the color scheme */
+    color: #ffffff; /* White text for contrast */
+    position: fixed;
+    top: 0;
+    left: -250px; /* Sidebar is hidden by default */
+    width: 250px;
+    height: 100%;
+    transition: left 0.3s ease; /* Smooth slide-in animation */
+    z-index: 1000;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Adds a shadow for depth */
+}
+
+.sidebar.visible {
+    left: 0; /* Makes the sidebar visible */
+}
+
+.sidebar ul {
+    list-style-type: disc; /* Add bullets to list items */
+    padding-left: 20px; /* Indent bullets slightly for better alignment */
+}
+
+.sidebar ul li {
+    margin: 10px 0; /* Add some space between items */
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    font-size: 16px;
+    color: #ffffff; /* White text for menu items */
+    text-decoration: none;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.sidebar ul li a:hover {
+    background-color: #52a099; /* Slightly lighter teal for hover */
+}
+
+.sidebar ul li a span {
+    margin-right: 10px; /* Space between icon and text */
+}
+
+
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.burger-menu .line {
+    height: 4px;
+    background-color: #52a099;
+    border-radius: 2px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.burger-menu.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+/* Header */
+header {
+    position: fixed; /* Fixed at the top */
+    top: 0;
+    left: 0; /* No space for the sidebar */
+    width: 100%; /* Full width */
+    background-color: #213A58;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    height: 70px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 900; /* Below sidebar but above content */
+}
+
+header h1 {
+    font-size: 1.6rem;
+    color: #46DFB1;
+    font-weight: bold;
+    margin-left: 10px; /* Add space from the burger menu */
+}
+
+/* Main Content */
+main {
+    margin-top: 70px; /* Space below the header */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: calc(100vh - 120px); /* Full height minus header and footer */
+    overflow-y: auto;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 900px;
+    width: 100%;
+}
+
+/* Cards */
+.status-card,
+.timer-card,
+.energy-summary {
+    background-color: #0C6478;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.status-card:hover,
+.timer-card:hover,
+.energy-summary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.status-card h2,
+.timer-card h2,
+.energy-summary h2 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #46DFB1;
+    color: #213A58;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #80EE98;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    position: fixed; /* Fixed at the bottom */
+    bottom: 0;
+    left: 0; /* No space for the sidebar */
+    width: 100%; /* Full width */
+    background-color: #213A58;
+    color: #AAB7B7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 900; /* Below sidebar but above content */
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Control</title>
+    <link rel="stylesheet" href="devicecontrol.css">
+    <script defer src="devicecontrol.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <ul>
+                <li><a href="../interface/interface.html"><span>🏠</span> Home</a></li>
+                <li><a href="#"><span>📊</span> Status</a></li>
+                <li><a href="#"><span>⚙️</span> Settings</a></li>
+                <li><a href="../notifications/notifications.html"><span>🔔</span> Notifications <span id="unread-count"></span></a></li>
+                <li><a href="../about/about.html"><span>ℹ️</span> About</a></li>
+            </ul>
+        </aside>
+
+        <!-- Header -->
+        <header>
+            <div class="burger-menu" id="burger-menu">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <h1>Device Control</h1>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="main-content">
+                <section class="device-management">
+                    <h2>Add a New Device</h2>
+                    <form id="add-device-form">
+                        <input type="text" id="device-name" placeholder="Device Name" required />
+                        <select id="device-type">
+                            <option value="Light">Light</option>
+                            <option value="Fan">Fan</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <button type="submit">Add Device</button>
+                    </form>
+                </section>
+
+                <section class="devices-list" id="devices-list">
+                    <h2>Devices</h2>
+                    <p>No devices added yet.</p>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>Optimizing Energy | Reducing Impact | AuraTrack © 2024</p>
+        </footer>
+    </div>
+</body>
+</html>

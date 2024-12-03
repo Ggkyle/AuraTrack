@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AuraTrack</title>
+        <link rel="stylesheet" href="interface.css">
+        <script defer src="interface.js"></script>
+        <link rel="stylesheet" href="../unreadnum.css">
+        <script defer src="../unreadnum.js"></script>
+    
+    
+    </head>
+    <body>
+        <div class="container">
+            <!-- Sidebar -->
+            <aside class="sidebar" id="sidebar">
+                <ul>
+                    <li><a href="../interface/interface.html"><span>🏠</span> Home</a></li>
+                    <li><a href="../devicecontrol/devicecontrol.html"><span>📊</span> Device Control</a></li>
+                    <li><a href="#"><span>⚙️</span> Settings</a></li>
+                    <li><a href="../notifications/notifications.html"><span>🔔</span> Notifications <span id="unread-count"></span> <!-- Unread count badge --></a></li>
+                    <li><a href="../About/about.html" class="active"><span>ℹ️</span> About</a></li>
+                </ul>
+        </aside>
+
+        <!-- Header -->
+        <header>
+            <div class="burger-menu" id="burger-menu">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <h1>AuraTrack</h1>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="main-content">
+                <section class="status-card">
+                    <h2>System Status</h2>
+                    <p>Status: <span id="status-label">Off</span></p>
+                    <button id="start-stop-btn">Start</button>
+                </section>
+
+                <section class="timer-card">
+                    <h2>Timer</h2>
+                    <p>Elapsed Time: <span id="timer-display">00:00:00</span></p>
+                    <button id="reset-timer-btn">Reset Timer</button>
+                </section>
+
+                <section class="energy-summary">
+                    <h2>Energy Savings</h2>
+                    <p>Energy Saved Today: <span id="energy-saved">0.00 kWh</span></p>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>Optimizing Energy | Reducing Impact | AuraTrack © 2024</p>
+        </footer>
+    </div>
+</body>
+</html>

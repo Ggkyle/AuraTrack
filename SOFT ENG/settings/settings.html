@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuraTrack - Settings</title>
+    <link rel="stylesheet" href="settings.css">
+    <script defer src="settings.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <ul>
+                <li><a href="../interface/interface.html"><span>🏠</span> Home</a></li>
+                <li><a href="../devicecontrol/devicecontrol.html"><span>📊</span> Device Control</a></li>
+                <li><a href="#" class="active"><span>⚙️</span> Settings</a></li>
+                <li><a href="../notifications/notifications.html"><span>🔔</span> Notifications</a></li>
+                <li><a href="../About/about.html"><span>ℹ️</span> About</a></li>
+            </ul>
+        </aside>
+
+        <!-- Header -->
+        <header>
+            <div class="burger-menu" id="burger-menu">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <h1>AuraTrack</h1>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="main-content">
+                <!-- Settings Card -->
+                <section class="settings-card">
+                    <h2>System Settings</h2>
+
+                    <!-- Motion Sensitivity -->
+                    <div class="setting-item">
+                        <label for="motion-sensitivity">Motion Sensitivity:</label>
+                        <input type="range" id="motion-sensitivity" min="1" max="10" value="5">
+                        <span id="sensitivity-value">5</span>
+                    </div>
+
+                    <!-- Notifications Toggle -->
+                    <div class="setting-item">
+                        <label for="notifications-toggle">Enable Notifications:</label>
+                        <input type="checkbox" id="notifications-toggle" checked>
+                    </div>
+
+                    <!-- Default Device -->
+                    <div class="setting-item">
+                        <label for="default-device">Default Device:</label>
+                        <select id="default-device">
+                            <option value="light">Light</option>
+                            <option value="fan">Fan</option>
+                        </select>
+                    </div>
+
+                    <!-- Save Button -->
+                    <button id="save-settings">Save Settings</button>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>Optimizing Energy | Reducing Impact | AuraTrack © 2024</p>
+        </footer>
+    </div>
+</body>
+</html>

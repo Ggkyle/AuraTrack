@@ -1,0 +1,128 @@
+/* General Styling */
+body, html {
+    font-family: Arial, sans-serif;
+    background-color: #213A58;
+    color: #D4D8DD;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Container */
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    background-color: #2b6777;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar.visible {
+    left: 0;
+}
+
+/* Header Styling */
+header {
+    background-color: #213A58;
+    color: #46DFB1;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 900;
+}
+
+/* Main Content */
+.main-content {
+    margin-top: 70px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 120px);
+}
+
+/* Settings Card */
+.settings-card {
+    background-color: #0C6478;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.settings-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.settings-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Settings Items */
+.setting-item {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.setting-item label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.setting-item input[type="range"] {
+    width: 100%;
+}
+
+.setting-item select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* Save Button */
+button {
+    background-color: #46DFB1;
+    color: #213A58;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #80EE98;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #213A58;
+    color: #AAB7B7;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 900;
+}
